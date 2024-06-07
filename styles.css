@@ -80,8 +80,6 @@ body {
 }
 
 .profile-image {
-    margin-top: 20px; /* Aggiunge spazio sopra l'immagine */
-    margin-left: 20px; /* Aggiunge spazio a sinistra dell'immagine */
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -98,3 +96,26 @@ body {
     text-align: center;
     align-items: center;
 }
+
+/* Aggiusta le dimensioni del testo per i dispositivi con larghezza massima di 768px (ad esempio, dispositivi mobili) */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 26px; /* Aggiungi spazio ai margini per evitare il taglio del testo */
+    }
+
+    h3 {
+        font-size: 22px; /* Riduci la dimensione del testo dell'intestazione */
+    }
+
+    p {
+        font-size: 16px; /* Riduci la dimensione del testo del paragrafo */
+    }
+
+    .card {
+        max-width: 90%; /* Riduci la larghezza massima della card per adattarsi meglio ai dispositivi mobili */
+    }
+
+    .btn {
+        padding: 8px 0; /* Riduci il padding del bottone per adattarsi meglio ai dispositivi mobili */
+        font-size: 14px; /* Riduci la dimensione del testo del bottone */
+    }
