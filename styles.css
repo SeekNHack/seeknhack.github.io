@@ -49,13 +49,16 @@ body {
     background-color: #ffffff;
     border-radius: 25px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 600px;
     width: 90%; /* Aggiunto per centrare */
     margin: 0 auto; /* Aggiunto per centrare */
     text-align: center; /* Aggiunto per centrare */
-    padding: 20px;
+    padding: 22px;
 }
 
+* {
+    font-size: 20px;
+}
 
 .card-content {
     display: flex;
