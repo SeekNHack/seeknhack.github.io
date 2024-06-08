@@ -76,10 +76,6 @@ body {
     margin-right: 8px;
 }
 
-.btn:hover {
-    background-color: #3700b3;
-}
-
 .profile-image {
     border-radius: 50%;
     width: 100px;

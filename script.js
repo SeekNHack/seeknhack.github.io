@@ -54,9 +54,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     ];
     
+    function darkenColor(color, percent) {
+        const num = parseInt(color.slice(1), 16),
+            amt = Math.round(2.55 * percent),
+            R = (num >> 16) - amt,
+            G = (num >> 8 & 0x00FF) - amt,
+            B = (num & 0x0000FF) - amt;
+        return `#${(0x1000000 + (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 + (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 + (B < 255 ? (B < 1 ? 0 : B) : 255)).toString(16).slice(1)}`;
+    }
     function getRandomColor() {
         return colorPatterns[Math.floor(Math.random() * colorPatterns.length)];
-        //return colorPatterns[11];
+        //return colorPatterns[x];
     }
 
     const background = document.querySelector('.background');
@@ -69,12 +77,26 @@ document.addEventListener("DOMContentLoaded", function() {
     const flagColor = randomPattern.colors[2];
     const fontcolor = randomPattern.colors[3];
 
+    const darkBtnColor = darkenColor(btnColor, 20);
+
     background.style.background = `linear-gradient(45deg, ${bgColor}, #fff)`;
     flag.style.color = flagColor;
     buttons.forEach(btn => {
         btn.style.backgroundColor = btnColor;
         btn.style.color = fontcolor;
+        
         // Coloro il font dentro il bottone
-    
+        // Aggiungi classe hover al mouseover e rimuovi al mouseout
+        btn.addEventListener('mouseover', () => {
+            btn.classList.add('hover');
+            btn.style.backgroundColor = darkBtnColor;
+        });
+        btn.addEventListener('mouseout', () => {
+            btn.classList.remove('hover');
+            btn.style.backgroundColor = btnColor;
+        });
+
+        btn.style.hover.color = fontcolor;
     });
+    
 });
