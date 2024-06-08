@@ -1,38 +1,80 @@
 // script.js
 
 document.addEventListener("DOMContentLoaded", function() {
-    const colors = [
-        '#6200ea', '#03dac6', '#ff0266', '#ffca28', '#4caf50', '#2196f3', '#9c27b0',
-        '#ff5722', '#607d8b', '#795548', '#673ab7', '#00bcd4', '#ffc107', '#8bc34a',
-        '#cddc39', '#3f51b5', '#009688', '#e91e63', '#f44336', '#3d5afe', '#651fff',
-        '#d500f9', '#ff1744', '#76ff03', '#ff9100', '#ff4081', '#304ffe', '#c51162',
-        '#00e676', '#00bfa5', '#ff80ab', '#ea80fc', '#8c9eff', '#80d8ff', '#a7ffeb',
-        '#ccff90', '#ffe57f', '#ffd740', '#ffc400', '#ffab40', '#ff6e40', '#ff5252',
-        '#ff4081', '#ff80ab', '#ea80fc', '#8c9eff', '#80d8ff', '#a7ffeb', '#b9f6ca',
-        '#ccff90', '#f4ff81', '#ffff8d', '#ffe57f', '#ffd740', '#ffc400', '#ffab40',
-        '#ff6e40'
+ /* Background, buttons and flag colors are generated randomly from colorPatterns */
+    const colorPatterns = [
+        {
+            name: "Summer",
+            colors: ["#fb8500", "#219ebc", "#ffffff", "#ffffff"]
+        },
+        {
+            name: "Autumn",
+            colors: ["#f72585", "#7209b7", "#3a0ca3", "#ffffff"]
+        },
+        {
+            name: "Winter",
+            colors: ["#0f4c75", "#bbe1fa", "#f0f0f0", "#219ebc"]
+        },
+        {
+            name: "Spring",
+            colors: ["#ff6b6b", "#f4f1de", "#2ec4b6", "#d4a373"]
+        },
+        {
+            name: "Pastel",
+            colors: ["#bc6c25", "#fefae0", "#5e6472", "#606c38"]
+        },
+        {
+            name: "BlueYellow",
+            colors: ["#003566", "#001d3d", "#ffc300", "#ffd60a"]
+        },
+        {
+            name: "BlackWhite",
+            colors: ["#000000", "#ffffff", "#ffffff", "#000000"]
+        },
+        {
+            name: "Ocean",
+            colors: ["#22577a", "#38a3a5", "#80ed99", "#c7f9cc"]
+        },
+        {
+            name: "Mountain",
+            colors: ["#f72585", "#3a0ca3", "#4cc9f0", "#4cc9f0"]
+        },
+        {
+            name: "Summer2",
+            colors: ["#ff9f1c", "#2ec4b6", "#cbf3f0", "#ffffff"]
+        },
+        {
+            name: "Autumn2",
+            colors: ["#90a955", "#31572c", "#90a955", "#ecf39e"]
+        },
+        {
+            name: "OceanStone",
+            colors: ["#3a7ca5", "#16425b", "#f0f0f0", "#d9dcd6"]
+        }
+
     ];
     
-    function randomColor() {
-        // Genera un colore casuale con luminosità e saturazione fisse
-        return chroma.random().saturate(2).brighten(2).hex();
-    }
-
     function getRandomColor() {
-        return colors[Math.floor(Math.random() * colors.length)];
+        return colorPatterns[Math.floor(Math.random() * colorPatterns.length)];
+        //return colorPatterns[11];
     }
 
     const background = document.querySelector('.background');
     const buttons = document.querySelectorAll('.btn');
     const flag = document.querySelector('.flag');
 
-    const bgColor = getRandomColor();
-    const btnColor = getRandomColor();
-    const flagColor = getRandomColor();
+    const randomPattern = getRandomColor();
+    const bgColor = randomPattern.colors[0];
+    const btnColor = randomPattern.colors[1];
+    const flagColor = randomPattern.colors[2];
+    const fontcolor = randomPattern.colors[3];
 
-    background.style.background = `linear-gradient(45deg, ${bgColor}, #faffd1)`;
+    background.style.background = `linear-gradient(45deg, ${bgColor}, #fff)`;
     flag.style.color = flagColor;
     buttons.forEach(btn => {
         btn.style.backgroundColor = btnColor;
+        btn.style.color = fontcolor;
+        // Coloro il font dentro il bottone
+    
     });
 });
