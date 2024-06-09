@@ -95,8 +95,6 @@ document.addEventListener("DOMContentLoaded", function() {
             btn.classList.remove('hover');
             btn.style.backgroundColor = btnColor;
         });
-
-        btn.style.hover.color = fontcolor;
     });
     
 });
