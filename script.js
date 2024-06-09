@@ -70,17 +70,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const background = document.querySelector('.background');
     const buttons = document.querySelectorAll('.btn');
     const flag = document.querySelector('.flag');
-
+    const p = document.querySelectorAll('p');
+    
     const randomPattern = getRandomColor();
     const bgColor = randomPattern.colors[0];
     const btnColor = randomPattern.colors[1];
     const flagColor = randomPattern.colors[2];
     const fontcolor = randomPattern.colors[3];
-
+    
     const darkBtnColor = darkenColor(btnColor, 20);
 
     background.style.background = `linear-gradient(45deg, ${bgColor}, #fff)`;
     flag.style.color = flagColor;
+    
     buttons.forEach(btn => {
         btn.style.backgroundColor = btnColor;
         btn.style.color = fontcolor;
@@ -90,13 +92,12 @@ document.addEventListener("DOMContentLoaded", function() {
         btn.addEventListener('mouseover', () => {
             btn.classList.add('hover');
             btn.style.backgroundColor = darkBtnColor;
+            btn.style.backgroundColor = darkBtnColor;
         });
         btn.addEventListener('mouseout', () => {
             btn.classList.remove('hover');
             btn.style.backgroundColor = btnColor;
         });
-
-        btn.style.hover.color = fontcolor;
     });
     
 });
