@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Consolas', sans-serif;
-    font-weight: bold;
+    font-weight: regular;
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -35,13 +35,14 @@ body {
 }
 
 p {
-    font-size: 1000px;
+    font-size: 12px;
+    color: #000000
 }
 
 .card {
     background-color: #ffffff;
     border-radius: 25px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     max-width: 400px;
     width: 90%; /* Aggiunto per centrare */
     margin: 0 auto; /* Aggiunto per centrare */
@@ -55,13 +56,14 @@ p {
     flex-direction: column;
     align-items: center;
     margin-top: 0px;
+        font-weight: 300;
 }
 
 .description{
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 12px;
-    color: rgb(62, 62, 62);
+    color: rgb(0, 0, 0);
 }
 
 .btn {
@@ -79,6 +81,8 @@ p {
     border-radius: 30px;
     transition: background-color 0.3s;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    position: relative;
 }
 
 .btn i.material-icons {
@@ -101,6 +105,10 @@ p {
     z-index: 1;
     text-align: center;
     align-items: center;
+}
+
+.flag{
+    font-weight: bold;
 }
 
 /* Aggiusta le dimensioni del testo per i dispositivi con larghezza massima di 768px (ad esempio, dispositivi mobili) */
