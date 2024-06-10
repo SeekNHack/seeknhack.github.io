@@ -97,6 +97,8 @@ p {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     object-fit: cover;
     z-index: 2;
+    position: relative;
+    margin-top: 40px;
 }
 
 .container {
