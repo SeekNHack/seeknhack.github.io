@@ -71,7 +71,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll('.btn');
     const flag = document.querySelector('.flag');
     const p = document.querySelectorAll('p');
-    
+    const profileImage = document.querySelector('.profile-image');
+    const card = document.querySelector('.card');
+    const description = document.querySelector('.description');
+    const h3 = document.querySelectorAll('h3');
     const randomPattern = getRandomColor();
     const bgColor = randomPattern.colors[0];
     const btnColor = randomPattern.colors[1];
@@ -93,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
             btn.classList.add('hover');
             btn.style.backgroundColor = darkBtnColor;
             btn.style.backgroundColor = darkBtnColor;
+
         });
         btn.addEventListener('mouseout', () => {
             btn.classList.remove('hover');
@@ -100,4 +104,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     
+    profileImage.classList.add('fade-in');
+    card.classList.add('fade-in');
+    flag.classList.add('fade-in');
+    description.classList.add('fade-in');
+    p.forEach(p => p.classList.add('fade-in'));
+    buttons.forEach(btn => btn.classList.add('fade-in'));
+    h3.forEach(h3 => h3.classList.add('fade-in'));
+
 });

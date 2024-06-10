@@ -1,7 +1,9 @@
 /* styles.css */
 
+
+
 body {
-    font-family: 'Consolas', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: regular;
     display: flex;
     justify-content: center;
@@ -20,7 +22,6 @@ body {
     background: rgb(70,179,11);
     background: radial-gradient(circle, rgba(70,179,11,1) 0%, rgba(0,214,116,1) 46%, rgba(0,212,255,1) 100%);
 }
-
 
 @keyframes gradientAnimation {
     0% {
@@ -50,20 +51,24 @@ p {
     padding: 24px;
 }
 
-
 .card-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 0px;
-        font-weight: 300;
+    font-weight: 300;
 }
 
-.description{
+.description {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 12px;
     color: rgb(0, 0, 0);
+    }
+
+.btn i.material-icons {
+    position: absolute;
+    left: 15px;
 }
 
 .btn {
@@ -76,29 +81,34 @@ p {
     margin: 10px 0;
     border: 1px solid rgba(55, 0, 179, 0.1);
     background-color: rgba(55, 0, 179, 1);
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     text-decoration: none;
     border-radius: 30px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s; /* Aggiunta la proprietà transform */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     font-weight: bold;
     position: relative;
-}
+    }
 
-.btn i.material-icons {
-    margin-right: 8px;
+.btn:hover {
+    transform: scale(1.03); /* Aggiunto l'ingrandimento al passaggio del mouse */
 }
 
 .profile-image {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border: 4px solid #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     object-fit: cover;
     z-index: 2;
     position: relative;
-    margin-top: 40px;
+    margin-top: 20px;
+    transition: transform 0.3s; /* Aggiunta la proprietà transform */
+}
+
+.profile-image:hover {
+    transform: scale(1.1); /* Aggiunto l'ingrandimento al passaggio del mouse */
 }
 
 .container {
@@ -109,8 +119,9 @@ p {
     align-items: center;
 }
 
-.flag{
+.flag {
     font-weight: bold;
+     /* Nasconde gli elementi inizialmente */
 }
 
 /* Aggiusta le dimensioni del testo per i dispositivi con larghezza massima di 768px (ad esempio, dispositivi mobili) */
@@ -135,3 +146,4 @@ p {
         padding: 8px 0; /* Riduci il padding del bottone per adattarsi meglio ai dispositivi mobili */
         font-size: 14px; /* Riduci la dimensione del testo del bottone */
     }
+}
